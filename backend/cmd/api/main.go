@@ -40,6 +40,7 @@ func main() {
 	// Handlers
 	healthHandler := handler.NewHealthHandler(cfg, db)
 	itemHandler := handler.NewItemHandler(db)
+	userHandler := handler.NewUserHandler(db)
 
 	// Routes
 	e.GET("/health", healthHandler.Check)
@@ -50,6 +51,7 @@ func main() {
 		api.GET("/items", itemHandler.GetAll)
 		api.POST("/items", itemHandler.Create)
 		api.DELETE("/items/:id", itemHandler.Delete)
+		api.POST("/users/register", userHandler.Register)
 	}
 
 	serverAddr := ":" + cfg.Port

@@ -38,7 +38,7 @@ func InitDB(cfg *config.Config) (*gorm.DB, error) {
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
 	// Auto-migrate schema
-	if err := db.AutoMigrate(&model.Item{}); err != nil {
+	if err := db.AutoMigrate(&model.Item{}, &model.User{}); err != nil {
 		log.Printf("Warning: auto-migration failed: %v", err)
 	}
 
