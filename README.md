@@ -82,3 +82,4 @@ Buka browser di `http://localhost:5173` untuk mengakses aplikasi web.
 | `GET` | `/api/items` | Mengambil seluruh daftar item dari database |
 | `POST` | `/api/items` | Menambahkan item baru ke database |
 | `DELETE` | `/api/items/:id` | Menghapus item berdasarkan ID |
+| `POST` | `/api/users/register` | Mendaftarkan pengguna baru (Name, Email, Password dengan bcrypt) |
